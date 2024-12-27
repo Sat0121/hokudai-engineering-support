@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北大工学部 学習支援ポータル</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a5f7a 0%, #2d8a5f 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+        .timeline-dot {
+            transition: all 0.3s ease;
+        }
+        .timeline-dot:hover {
+            transform: scale(1.5);
+            box-shadow: 0 0 15px rgba(45, 138, 95, 0.5);
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-blue-50 min-h-screen smooth-scroll">
+    <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold tracking-tight">北大工学部 学習支援ポータル</h1>
+            </div>
+            <div class="block lg:hidden">
+                <button class="flex items-center px-3 py-2 border-2 rounded-lg text-white border-white hover:text-green-200 hover:border-green-200 transition-colors duration-300">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>メニュー</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden w-full lg:flex lg:items-center lg:w-auto">
+                <div class="text-sm lg:flex-grow">
+                    <div class="lg:hidden space-y-4 py-4">
+                        <a href="/about" class="block px-4 py-2 text-white hover:bg-green-600 rounded-lg transition-colors duration-300">
+                            つくった人たち
+                        </a>
+                        <a href="/past-exams" class="block px-4 py-2 text-white hover:bg-green-600 rounded-lg transition-colors duration-300">
+                            テスト対策資料
+                        </a>
+                        <a href="/student-benefits" class="block px-4 py-2 text-white hover:bg-green-600 rounded-lg transition-colors duration-300">
+                            学割・キャンペーン情報
+                        </a>
+                    </div>
+                    <div class="hidden lg:flex space-x-8">
+                        <a href="#second-year" class="text-white hover:text-green-200 transition-colors duration-300 font-medium">
+                            2年生
+                        </a>
+                        <a href="#third-year" class="text-white hover:text-green-200 transition-colors duration-300 font-medium">
+                            3年生
+                        </a>
+                        <a href="#lab-assignment" class="text-white hover:text-green-200 transition-colors duration-300 font-medium">
+                            研究室配属
+                        </a>
+                        <a href="#fourth-year" class="text-white hover:text-green-200 transition-colors duration-300 font-medium">
+                            4年生
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="hero" class="text-center mb-24 animate-fade-in">
+            <h2 class="text-5xl font-bold text-gray-800 mb-6 tracking-tight">工学部での学びをサポート</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                2年次から卒業までの学習生活を充実させるための情報ポータル
+            </p>
+            <div class="inline-block p-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-full">
+                <button class="px-8 py-3 bg-white rounded-full text-gray-800 font-semibold hover:bg-transparent hover:text-white transition-all duration-300">
+                    総合理系の方へ
+                </button>
+            </div>
+        </section>
+
+        <div class="relative">
+            <!-- 時系列を表すライン -->
+            <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-green-200 via-green-400 to-green-600 transform -translate-x-1/2"></div>
+
+            <!-- 2年生 -->
+            <section id="second-year" class="relative mb-24">
+                <div class="lg:w-1/2 lg:pr-16 mb-8 lg:mb-0">
+                    <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 card-hover border-t-4 border-green-400">
+                        <div class="absolute right-0 top-1/2 hidden lg:block w-6 h-6 bg-gradient-to-r from-green-400 to-blue-500 rounded-full transform translate-x-9 -translate-y-1/2 timeline-dot cursor-pointer"></div>
+                        <span class="inline-block bg-gradient-to-r from-green-400 to-green-600 text-white px-6 py-3 rounded-full text-2xl font-bold mb-6 transform hover:scale-105 transition-transform duration-300">2年生</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">専門課程への準備</h3>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                                コース選択ガイド
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                                必修科目の履修計画
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                                実験・演習の心構え
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                                先輩からのアドバイス
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3年生 -->
+            <section id="third-year" class="relative mb-24">
+                <div class="lg:w-1/2 lg:pl-16 lg:ml-auto">
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 card-hover border-t-4 border-blue-400">
+                        <div class="absolute left-0 top-1/2 hidden lg:block w-6 h-6 bg-gradient-to-r from-blue-400 to-green-500 rounded-full transform -translate-x-9 -translate-y-1/2 timeline-dot cursor-pointer"></div>
+                        <span class="inline-block bg-gradient-to-r from-blue-400 to-blue-600 text-white px-6 py-3 rounded-full text-2xl font-bold mb-6 transform hover:scale-105 transition-transform duration-300">3年生</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">専門性の深化</h3>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                                専門科目の学習戦略
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                                研究室見学の準備
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                                インターンシップ情報
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                                資格取得サポート
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 研究室配属 -->
+            <section id="lab-assignment" class="relative mb-24">
+                <div class="lg:w-1/2 lg:pr-16">
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 card-hover border-t-4 border-purple-400">
+                        <div class="absolute right-0 top-1/2 hidden lg:block w-6 h-6 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full transform translate-x-9 -translate-y-1/2 timeline-dot cursor-pointer"></div>
+                        <span class="inline-block bg-gradient-to-r from-purple-400 to-purple-600 text-white px-6 py-3 rounded-full text-2xl font-bold mb-6 transform hover:scale-105 transition-transform duration-300">研究室配属</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">研究生活のスタート</h3>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                                研究室情報データベース
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                                配属までのスケジュール
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                                志望調書の書き方
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                                面接対策アドバイス
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4年生 -->
+            <section id="fourth-year" class="relative">
+                <div class="lg:w-1/2 lg:pl-16 lg:ml-auto">
+                    <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 card-hover border-t-4 border-indigo-400">
+                        <div class="absolute left-0 top-1/2 hidden lg:block w-6 h-6 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full transform -translate-x-9 -translate-y-1/2 timeline-dot cursor-pointer"></div>
+                        <span class="inline-block bg-gradient-to-r from-indigo-400 to-indigo-600 text-white px-6 py-3 rounded-full text-2xl font-bold mb-6 transform hover:scale-105 transition-transform duration-300">4年生</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">卒業研究と進路決定</h3>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-indigo-400 rounded-full mr-3"></span>
+                                卒業研究の進め方
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-indigo-400 rounded-full mr-3"></span>
+                                論文作成ガイド
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-indigo-400 rounded-full mr-3"></span>
+                                大学院進学情報
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-indigo-400 rounded-full mr-3"></span>
+                                就職活動体験談
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="gradient-bg text-white py-12 mt-24">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">北大工学部 学習支援ポータル</h3>
+                    <p class="text-gray-200 leading-relaxed">学生による学生のための学習支援サイト</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6">お問い合わせ</h3>
+                    <p class="text-gray-200 leading-relaxed">ご質問・ご要望はこちらから</p>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/20 text-center text-gray-200">
+                <p>&copy; 2024 北大工学部 学習支援ポータル All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // モバイルメニュー

@@ -1,0 +1,24 @@
+# メモ帳やVS Codeで新規ファイルを作成し、.gitignoreという名前で保存
+# 以下の内容をコピー&ペースト
+
+# macOS固有のファイル
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windowsファイル
+Thumbs.db
+Desktop.ini
+
+# エディタ固有のファイル
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ログファイル
+*.log
+
+# 一時ファイル
+tmp/
+temp/
