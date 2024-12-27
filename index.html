@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" class="bg-gradient-to-br from-teal-900/10 to-green-900/10">
+<html lang="ja" class="transition-colors duration-300">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,11 +41,14 @@
         .mobile-menu-slide.open {
             transform: translateX(0);
         }
+		.theme-switch {
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
-<body class="min-h-screen smooth-scroll bg-gradient-to-br from-teal-900/10 to-green-900/10">
+<body class="min-h-screen smooth-scroll bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
     <!-- 以下、ヘッダー部分を更新 -->
-    <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+    <header class="gradient-bg text-white shadow-lg sticky top-0 z-50 dark:shadow-gray-900">
         <nav class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
             <div class="flex items-center">
                 <h1 class="text-2xl font-bold tracking-tight">北大工学部 学習支援ポータル</h1>
@@ -75,7 +78,7 @@
             </div>
 
             <!-- デスクトップメニュー -->
-            <div class="hidden lg:flex lg:items-center lg:w-auto">
+            <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-green-200 via-green-400 to-green-600 dark:from-green-900 dark:via-green-800 dark:to-green-700 transform -translate-x-1/2"></div>
                 <div class="text-sm lg:flex-grow">
                     <a href="#second-year" class="inline-block mt-0 text-white hover:text-green-200 mr-8 transition-colors duration-300 font-medium">
                         2年生
@@ -90,14 +93,24 @@
                         4年生
                     </a>
                 </div>
+				
+				<!-- テーマ切り替えボタン -->
+                <button id="theme-toggle" class="theme-switch ml-4 p-2 rounded-lg border-2 border-white/20 hover:border-white/40 transition-all duration-300 flex items-center space-x-2">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                         <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
 	
     <main class="container mx-auto px-4 py-8">
         <section id="hero" class="text-center mb-24 animate-fade-in">
-            <h2 class="text-5xl font-bold text-gray-800 mb-6 tracking-tight">工学部での学びをサポート</h2>
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <h2 class="text-5xl font-bold text-gray-800 dark:text-gray-100 mb-6 tracking-tight">工学部での学びをサポート</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
                 2年次から卒業までの学習生活を充実させるための情報ポータル
             </p>
             <div class="inline-block p-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-full">
@@ -114,11 +127,11 @@
             <!-- 2年生 -->
             <section id="second-year" class="relative mb-24">
                 <div class="lg:w-1/2 lg:pr-16 mb-8 lg:mb-0">
-                    <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 card-hover border-t-4 border-green-400">
+                    <div class="bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 card-hover border-t-4 border-green-400">
                         <div class="absolute right-0 top-1/2 hidden lg:block w-6 h-6 bg-gradient-to-r from-green-400 to-blue-500 rounded-full transform translate-x-9 -translate-y-1/2 timeline-dot cursor-pointer"></div>
                         <span class="inline-block bg-gradient-to-r from-green-400 to-green-600 text-white px-6 py-3 rounded-full text-2xl font-bold mb-6 transform hover:scale-105 transition-transform duration-300">2年生</span>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">専門課程への準備</h3>
-                        <ul class="space-y-4 text-gray-600">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">専門課程への準備</h3>
+                        <ul class="space-y-4 text-gray-600 dark:text-gray-300">
                             <li class="flex items-center">
                                 <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                                 コース選択ガイド
@@ -143,11 +156,11 @@
             <!-- 3年生 -->
             <section id="third-year" class="relative mb-24">
                 <div class="lg:w-1/2 lg:pl-16 lg:ml-auto">
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 card-hover border-t-4 border-blue-400">
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 card-hover border-t-4 border-blue-400">
                         <div class="absolute left-0 top-1/2 hidden lg:block w-6 h-6 bg-gradient-to-r from-blue-400 to-green-500 rounded-full transform -translate-x-9 -translate-y-1/2 timeline-dot cursor-pointer"></div>
                         <span class="inline-block bg-gradient-to-r from-blue-400 to-blue-600 text-white px-6 py-3 rounded-full text-2xl font-bold mb-6 transform hover:scale-105 transition-transform duration-300">3年生</span>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">専門性の深化</h3>
-                        <ul class="space-y-4 text-gray-600">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">専門性の深化</h3>
+                        <ul class="space-y-4 text-gray-600 dark:text-gray-300">
                             <li class="flex items-center">
                                 <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                                 専門科目の学習戦略
@@ -172,11 +185,11 @@
             <!-- 研究室配属 -->
             <section id="lab-assignment" class="relative mb-24">
                 <div class="lg:w-1/2 lg:pr-16">
-                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 card-hover border-t-4 border-purple-400">
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 card-hover border-t-4 border-purple-400">
                         <div class="absolute right-0 top-1/2 hidden lg:block w-6 h-6 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full transform translate-x-9 -translate-y-1/2 timeline-dot cursor-pointer"></div>
                         <span class="inline-block bg-gradient-to-r from-purple-400 to-purple-600 text-white px-6 py-3 rounded-full text-2xl font-bold mb-6 transform hover:scale-105 transition-transform duration-300">研究室配属</span>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">研究生活のスタート</h3>
-                        <ul class="space-y-4 text-gray-600">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">研究生活のスタート</h3>
+                        <ul class="space-y-4 text-gray-600 dark:text-gray-300">
                             <li class="flex items-center">
                                 <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
                                 研究室情報データベース
@@ -201,11 +214,11 @@
             <!-- 4年生 -->
             <section id="fourth-year" class="relative">
                 <div class="lg:w-1/2 lg:pl-16 lg:ml-auto">
-                    <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 card-hover border-t-4 border-indigo-400">
+                    <div class="bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 card-hover border-t-4 border-indigo-400">
                         <div class="absolute left-0 top-1/2 hidden lg:block w-6 h-6 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full transform -translate-x-9 -translate-y-1/2 timeline-dot cursor-pointer"></div>
                         <span class="inline-block bg-gradient-to-r from-indigo-400 to-indigo-600 text-white px-6 py-3 rounded-full text-2xl font-bold mb-6 transform hover:scale-105 transition-transform duration-300">4年生</span>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">卒業研究と進路決定</h3>
-                        <ul class="space-y-4 text-gray-600">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">卒業研究と進路決定</h3>
+                        <ul class="space-y-4 text-gray-600 dark:text-gray-300">
                             <li class="flex items-center">
                                 <span class="w-2 h-2 bg-indigo-400 rounded-full mr-3"></span>
                                 卒業研究の進め方
@@ -229,7 +242,7 @@
         </div>
     </main>
 
-    <footer class="gradient-bg text-white py-12 mt-24">
+    <footer class="gradient-bg text-white py-12 mt-24 dark:bg-gray-900">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-12">
                 <div>
@@ -268,6 +281,38 @@
             
             if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
                 mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+	
+	<script>
+        // テーマの切り替え機能
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        // 初期設定
+        if (localStorage.getItem('color-theme') === 'dark' ||
+            (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        // ボタンクリックイベント
+        themeToggleBtn.addEventListener('click', function() {
+            // アイコンの切り替え
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            // ローカルストレージの更新
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
             }
         });
     </script>
